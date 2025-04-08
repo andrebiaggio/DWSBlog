@@ -1,0 +1,6 @@
+@use "../../../styles/base/variables" as *;
+
+main {
+  min-height: 100vh;
+  padding: $padding-medium;
+}

@@ -1,0 +1,38 @@
+@use "../../../styles/base/variables" as *;
+
+.header {
+  padding: $padding-medium;
+  border-bottom: 2px solid $neutral-extra-light;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: auto;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+
+    @media (max-width: 480px) {
+      img {
+        height: 20px;
+      }
+
+      span {
+        font-size: $body-small;
+      }
+    }
+
+    img {
+      margin-right: 0.5rem;
+    }
+
+    span {
+      line-height: 1;
+    }
+  }
+}

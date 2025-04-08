@@ -1,0 +1,13 @@
+.posts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 314px);
+  gap: 24px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  // justify-content: center;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}

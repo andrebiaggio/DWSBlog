@@ -1,0 +1,79 @@
+@use "../../../styles/base/variables" as *;
+
+.card {
+  width: 314px;
+  border-radius: $border-radius-large;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+
+  &__image {
+    width: 100%;
+    height: 196px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: $neutral-dark;
+    font-size: 14px;
+
+    time {
+      color: $neutral-medium;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: $primary-dark;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__excerpt {
+    font-size: 14px;
+    line-height: 1.5;
+    color: $neutral-dark;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__categories {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  &__category {
+    padding: 4px 8px;
+    background-color: $neutral-lightest;
+    border-radius: 4px;
+    font-size: 12px;
+    color: $primary-medium;
+    font-weight: 500;
+  }
+}

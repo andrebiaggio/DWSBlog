@@ -1,0 +1,69 @@
+@use "../../styles/base/variables" as *;
+
+.blog {
+  max-width: 1300px;
+  margin: 0 auto;
+
+  &__filters--mobile {
+    display: none;
+    gap: $margin-small;
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__header {
+    margin-bottom: $margin-large;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__filters {
+    width: 280px;
+
+    &__container {
+      background: white;
+      border-radius: $border-radius-large;
+      padding: 24px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &__title {
+      margin-bottom: $margin-medium;
+      font-size: 1.25rem;
+      color: $primary-dark;
+      font-weight: $font-weight-bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__posts {
+    max-width: 990px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,82 @@
+@use "../../../styles/base/variables" as *;
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &--open {
+    .button {
+      background-color: rgba($primary-medium, 0.1);
+    }
+  }
+
+  &__gap-cover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    bottom: -4px;
+  }
+
+  &__content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: white;
+    border: 1px solid $neutral-light;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    margin-top: 4px;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: $neutral-dark;
+    font-size: 14px;
+    padding: $padding-small $padding-medium;
+    gap: $margin-small;
+
+    &:hover {
+      background-color: rgba($primary-medium, 0.05);
+    }
+
+    &--selected {
+      background-color: rgba($primary-medium, 0.1);
+      color: $primary-medium;
+      font-weight: 500;
+      color: $secondary-medium;
+
+      &:hover {
+        background-color: rgba($primary-medium, 0.15);
+      }
+    }
+
+    &:last-child {
+      border-radius: 0 0 16px 16px;
+    }
+
+    &:first-child {
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
+  &__option-label {
+    font-size: 14px;
+    color: $neutral-dark;
+  }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+  }
+}

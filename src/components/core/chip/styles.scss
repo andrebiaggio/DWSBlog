@@ -1,0 +1,11 @@
+@use "../../../styles/base/variables" as *;
+
+.chip {
+  background-color: $neutral-light;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: $body-large;
+  line-height: 1;
+  font-weight: 500;
+}

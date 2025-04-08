@@ -1,0 +1,93 @@
+@use "../../../styles/base/variables" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 100%;
+
+  &--primary {
+    background-color: $primary-medium;
+    color: white;
+
+    &:hover {
+      background-color: $primary-dark;
+    }
+
+    &.button--color--primary {
+      background-color: $primary-medium;
+    }
+
+    &.button--color--secondary {
+      background-color: $secondary-medium;
+    }
+
+    &.button--color--accent {
+      background-color: transparent;
+
+      svg {
+        fill: $accent-medium;
+      }
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    // color: $primary-medium;
+    border: 2px solid;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-weight: 500;
+    gap: 4px;
+
+    &:hover {
+      background-color: rgba($primary-medium, 0.1);
+    }
+
+    &.button--color--secondary {
+      border-color: $secondary-light;
+      color: $secondary-light;
+    }
+
+    &.button--color--primary {
+      border-color: $primary-medium;
+      color: $primary-medium;
+    }
+  }
+
+  &--text {
+    background: transparent;
+    color: $primary-medium;
+    border-radius: 32px !important;
+    font-size: $body-large;
+
+    &:hover {
+      color: $primary-dark;
+    }
+
+    &.button--color--secondary {
+      background-color: $secondary-medium;
+      color: white;
+    }
+
+    &.button--color--primary {
+      border-color: $primary-medium;
+      color: $primary-medium;
+    }
+  }
+
+  &--small {
+    font-size: 14px;
+  }
+
+  &--medium {
+    font-size: 16px;
+  }
+
+  &--large {
+    font-size: 18px;
+  }
+}

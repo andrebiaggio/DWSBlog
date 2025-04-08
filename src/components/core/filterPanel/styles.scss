@@ -1,0 +1,50 @@
+@use "../../../styles/base/variables" as *;
+
+.filter-panel {
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  &__title {
+    font-size: 1rem;
+    color: $primary-dark;
+    margin: 0 0 16px;
+    font-weight: $font-weight-bold;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: $margin-large;
+  }
+
+  &__option {
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: $primary-dark;
+    font-size: 14px;
+    border-bottom: 1px solid $neutral-light;
+
+    &:hover {
+      span {
+        color: $accent-dark;
+      }
+    }
+
+    &--selected {
+      background-color: rgba($accent-light, 0.05);
+      border-color: $accent-dark;
+
+      span {
+        color: $accent-dark;
+      }
+    }
+  }
+
+  &__option-label {
+    font-size: $body-small;
+    color: $primary-dark;
+  }
+}

@@ -1,0 +1,148 @@
+@use "../../../styles/base/variables" as *;
+
+.input-search {
+  position: relative;
+
+  &__container {
+    position: relative;
+    width: 500px;
+    background: white;
+    border-radius: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+
+    @media (max-width: 1284px) {
+      width: 300px;
+    }
+
+    @media (max-width: 768px) {
+      width: 40px;
+      height: 40px;
+      background: none;
+      box-shadow: none;
+
+      &--visible {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 72px;
+        padding: 16px;
+        background: white;
+        z-index: 1001;
+        border-radius: 0;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    padding: 0 48px 0 10px;
+    border: none;
+    background: none;
+    font-size: 0.875rem;
+    color: $primary-dark;
+    outline: none;
+
+    &::placeholder {
+      color: $neutral-dark;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+
+      .input-search__container--visible & {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  &__button {
+    position: absolute;
+    right: 5px;
+    width: 40px !important;
+    height: 40px !important;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    &:hover {
+      background: $primary-dark;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__modal {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 1000;
+
+    @media (max-width: 768px) {
+      display: none;
+
+      .input-search__container--visible & {
+        display: block;
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 72px);
+        max-height: unset;
+        border-radius: 0;
+        z-index: 1001;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $neutral-light;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $neutral-medium;
+      border-radius: 3px;
+
+      &:hover {
+        background: $neutral-dark;
+      }
+    }
+  }
+
+  &__option {
+    padding: 12px 16px;
+    cursor: pointer;
+    color: $neutral-dark;
+    font-size: 0.875rem;
+    border-bottom: 1px solid $neutral-light;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: rgba($primary-medium, 0.05);
+      color: $primary-medium;
+    }
+  }
+}
